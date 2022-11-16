@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Ticket {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
@@ -20,11 +20,11 @@ public class Ticket {
 	int price;
 	@Column
 	int age;
-	
+
 	public Ticket() {
 		super();
 	}
-	
+
 	public Ticket(int id, String name, int price, int age) {
 		super();
 		this.id = id;
@@ -32,30 +32,37 @@ public class Ticket {
 		this.price = price;
 		this.age = age;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getPrice() {
 		return price;
 	}
+
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 }
