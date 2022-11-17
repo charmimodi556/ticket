@@ -19,7 +19,7 @@ public class Visitors {
 	@Column
 	int vage;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="ticketId", referencedColumnName="id")
 	Ticket ticket;
 
@@ -59,6 +59,12 @@ public class Visitors {
 	public Visitors() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "Visitors [vid=" + vid + ", vname=" + vname + ", vage=" + vage + ", ticket=" + ticket + "]";
+	}
+	
+	
 	
 	
 }

@@ -65,4 +65,11 @@ public class Ticket {
 		this.age = age;
 	}
 
+	@Override
+	public String toString() {
+		return "Ticket [id=" + id + ", name=" + name + ", price=" + price + ", age=" + age + "]";
+	}
+	
+	
+
 }

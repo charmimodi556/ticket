@@ -22,8 +22,11 @@ public class VisitorController {
 	
 	@PostMapping("/addVisitor")
 	public String addTicket(@RequestBody Visitors visitors) {
-		String msgString = "Visitors details added successfully";
+		
+		System.out.println("Vistior object : " + visitors.toString());
+		
 		visitorService.addVisitor(visitors);
+		String msgString = "Visitors details added successfully";
 	
 		return msgString;
 	}
