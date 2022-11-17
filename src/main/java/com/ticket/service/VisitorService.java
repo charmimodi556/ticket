@@ -1,5 +1,8 @@
 package com.ticket.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ticket.Visitors;
@@ -18,11 +21,13 @@ public class VisitorService {
 		visitorRepo.save(visitors);
 	}
 
-//	public List<Visitors> listVisit(String name) {
-//		List<Ticket> listTickets = new ArrayList<>();
-//		ticketRepo.findAll().forEach(ticket1 -> listTickets.add(ticket1));
-//		return null;
-//	}
-	
+
+	public List<Visitors> listVisit() {
+		List<Visitors> listVisitors = new ArrayList<>();
+		visitorRepo.findAll().forEach(visitor1 -> listVisitors.add(visitor1));
+		return listVisitors;
+	}
+
+
 	
 }
