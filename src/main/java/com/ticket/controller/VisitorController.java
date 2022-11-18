@@ -21,13 +21,14 @@ public class VisitorController {
 	VisitorService visitorService;
 	
 	@PostMapping("/addVisitor")
-	public String addTicket(@RequestBody Visitors visitors) {
-		
-		System.out.println("Vistior object : " + visitors.toString());
-		
+	public String addTicket(@RequestBody Visitors visitors) throws Exception{
+		String msgString = null;
+		try {		
 		visitorService.addVisitor(visitors);
-		String msgString = "Visitors details added successfully";
-	
+			msgString = "Visitors details added successfully";
+		} catch (Exception e) {
+			msgString = e.getMessage();
+		}
 		return msgString;
 	}
 	

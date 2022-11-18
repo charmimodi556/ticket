@@ -14,10 +14,14 @@ public class VisitorService {
 	VisitorRepository visitorRepo;
 	
 	@Autowired
+	VisitorHelper visitorHelper;
+	
+	@Autowired
 	TicketRepository ticketRepo;
 	
 	
-	public void addVisitor(Visitors visitors) {
+	public void addVisitor(Visitors visitors) throws Exception {
+		visitorHelper.validate(visitors);
 		visitorRepo.save(visitors);
 	}
 
