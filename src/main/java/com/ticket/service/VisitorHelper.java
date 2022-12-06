@@ -1,11 +1,16 @@
 package com.ticket.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ticket.Visitors;
 
 @Component
 public class VisitorHelper {
+	
+	@Autowired
+	TicketService ticketService;
+	
 	public void validate(Visitors visitors) throws Exception {
 		int findNameLen = visitors.getVname().length();
 		int findVisitorIDLen = String.valueOf(visitors.getVid()).length();
@@ -16,6 +21,10 @@ public class VisitorHelper {
 		
 		if (findNameLen > 10) {
 			throw new Exception("Name length should be between 0 to 10");
+		}
+		
+		if(visitors.getVage() <= ticketService.getAge(visitors.getTicket().getId())) {
+			throw new Exception("Age is less than given in ticket!!");
 		}
 
 		if (!visitors.getVname().matches("[a-zA-Z]+")) {

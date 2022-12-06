@@ -62,5 +62,18 @@ public class TicketController {
 		List<Ticket> listTicket = ticketService.listTicket();
 		return listTicket;
 	}
+	
+	@GetMapping("/{id}")
+	public int getAge(@PathVariable("id") int id) {
+		int getAge = ticketService.getAge(id);
+		return getAge;
+	}
+	
+	public boolean isEven(int a) {
+		if(a%2 == 0) {
+			return true;
+		}
+		return false;
+	}
 
 }

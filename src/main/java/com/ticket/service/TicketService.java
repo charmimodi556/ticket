@@ -50,4 +50,17 @@ public class TicketService {
 		return listTickets;
 	}
 
+	public int getAge(int id) {
+		List<Ticket> listTickets = listTicket();
+		int age=0;
+		
+		for(int i=0;i<listTickets.size();i++) {
+			if(listTickets.get(i).getId() == id) {
+				age = listTickets.get(i).getAge();
+			}
+		}
+		
+		return age;
+	}
+
 }
